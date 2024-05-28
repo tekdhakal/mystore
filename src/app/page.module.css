@@ -3,8 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 0;
+  margin:0;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .description {
@@ -138,11 +140,7 @@
     max-width: 320px;
     text-align: center;
   }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
+  
   .card h2 {
     margin-bottom: 0.5rem;
   }
@@ -216,7 +214,7 @@
   }
 
   .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    filter: invert(1) drop-shadow(0 0 0.3rem #b9131370);
   }
 }
 
@@ -227,4 +225,60 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+
+/* src/app/SearchBar.module.css */
+.searchBarContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.searchInput {
+  padding: 12px;
+  font-size: 18px;
+  /* Adjust this value as needed for desired width */
+  width: 800px;
+  /* Maximum width for larger screens */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.searchInputWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+@media (max-width: 1200px) {
+  .searchInput {
+    max-width: 600px;
+    /* Adjust this value as needed for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .searchInput {
+    max-width: 400px;
+    /* Adjust this value as needed for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .searchInput {
+    max-width: 300px;
+    /* Adjust this value as needed for very small screens */
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  height: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Ensure the icon does not block input interaction */
 }
